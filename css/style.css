@@ -1,0 +1,348 @@
+/* =========================================================
+   STYLE.CSS — Requiere que variables.css esté cargado antes
+   en index.html (<link href="css/variables.css"> primero)
+   ========================================================= */
+
+/* =========================================================
+   2. RESET Y BASE
+   ========================================================= */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 6.5rem; }
+
+body {
+  margin: 0;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--color-primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.25; margin: 0 0 var(--space-sm); }
+h1 { font-size: clamp(2rem, 5vw, 3rem); }
+h2 { font-size: clamp(1.5rem, 4vw, 2.1rem); }
+h3 { font-size: 1.15rem; }
+p { margin: 0 0 var(--space-md); max-width: 65ch; }
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+.container {
+  width: min(100% - 2 * var(--space-lg), var(--content-width));
+  margin-inline: auto;
+}
+
+.section { padding-block: var(--space-xl); }
+.section--surface { background: var(--color-surface); }
+
+.section__eyebrow {
+  font-family: var(--font-display);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-xs);
+}
+.section__lead { color: var(--color-text-muted); max-width: 60ch; }
+
+/* =========================================================
+   3. HEADER / "EDITOR CHROME" NAV
+   ========================================================= */
+.editor-chrome {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.editor-chrome__top {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: var(--space-sm) var(--space-lg);
+}
+
+.editor-chrome__brand { display: flex; align-items: center; gap: var(--space-sm); }
+
+.dot { width: 0.7rem; height: 0.7rem; border-radius: 50%; display: inline-block; }
+.dot--red { background: #f38ba8; }
+.dot--yellow { background: #f9e2af; }
+.dot--green { background: #a6e3a1; }
+
+.editor-chrome__filename {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  color: var(--color-text);
+  margin-left: var(--space-sm);
+}
+.editor-chrome__ext { color: var(--color-text-muted); }
+
+.editor-chrome__actions { display: flex; align-items: center; gap: var(--space-sm); }
+
+.icon-btn {
+  width: 2.25rem; height: 2.25rem;
+  display: flex; align-items: center; justify-content: center;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.icon-btn:hover { border-color: var(--color-primary); }
+
+.menu-toggle {
+  display: none;
+  flex-direction: column; gap: 4px;
+  background: none; border: none; cursor: pointer; padding: var(--space-xs);
+}
+.menu-toggle span { width: 22px; height: 2px; background: var(--color-text); display: block; }
+
+.tabs__list {
+  list-style: none; display: flex; margin: 0; padding: 0 var(--space-lg);
+  overflow-x: auto;
+}
+
+.tabs__item {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+.tabs__item:hover { color: var(--color-text); text-decoration: none; }
+.tabs__item.is-active {
+  color: var(--color-text);
+  border-bottom-color: var(--color-primary);
+  background: var(--color-background);
+}
+
+/* =========================================================
+   4. HERO
+   ========================================================= */
+.hero { padding-top: var(--space-xl); }
+.hero__grid {
+  display: grid; grid-template-columns: 1.3fr 1fr; gap: var(--space-lg);
+  align-items: center;
+}
+.hero__eyebrow { font-family: var(--font-display); color: var(--color-primary); }
+.hero__title{ }
+.hero__name { color: var(--color-primary); }
+.hero__role {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-md);
+}
+.hero__cursor { animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+.hero__lead { color: var(--color-text-muted); }
+.hero__actions { display: flex; gap: var(--space-sm); flex-wrap: wrap; margin-top: var(--space-md); }
+
+.hero__figure { margin: 0; justify-self: center; }
+.hero__avatar {
+  width: 220px; height: 220px; border-radius: 50%;
+  object-fit: cover; border: 3px solid var(--color-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__cursor { animation: none; }
+}
+
+/* =========================================================
+   5. BOTONES
+   ========================================================= */
+.btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: inline-block;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+.btn:hover { text-decoration: none; transform: translateY(-1px); }
+
+.btn--primary { background: var(--color-primary); color: #10121c; }
+.btn--secondary { background: transparent; color: var(--color-text); border-color: var(--color-border); }
+.btn--ghost { background: transparent; color: var(--color-primary); border-color: var(--color-primary); }
+
+/* =========================================================
+   6. SOBRE MÍ
+   ========================================================= */
+.about__grid { display: grid; grid-template-columns: 2fr 1fr; gap: var(--space-lg); align-items: start; }
+
+.fact-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-sm); }
+.fact-list__item {
+  display: flex; flex-direction: column;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm) var(--space-md);
+}
+.fact-list__label { font-size: 0.8rem; color: var(--color-text-muted); }
+.fact-list__value { font-weight: 600; }
+
+/* =========================================================
+   7. SKILLS
+   ========================================================= */
+.skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: var(--space-lg); margin-top: var(--space-lg); }
+.skill-category__title { border-bottom: 1px solid var(--color-border); padding-bottom: var(--space-xs); }
+.skill-list { list-style: none; margin: var(--space-sm) 0 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-sm); }
+
+.skill-badge {
+  display: flex; justify-content: space-between; align-items: center;
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-xs) var(--space-sm);
+}
+.skill-badge__level { font-size: 0.75rem; color: var(--color-primary); font-family: var(--font-display); }
+
+/* =========================================================
+   8. PROYECTOS
+   ========================================================= */
+.filter-bar { display: flex; gap: var(--space-sm); flex-wrap: wrap; margin: var(--space-md) 0 var(--space-lg); }
+.filter-chip {
+  font-family: var(--font-display); font-size: 0.8rem;
+  background: transparent; color: var(--color-text-muted);
+  border: 1px solid var(--color-border); border-radius: 999px;
+  padding: 0.4rem 0.9rem; cursor: pointer;
+}
+.filter-chip.is-active, .filter-chip:hover { color: var(--color-text); border-color: var(--color-primary); }
+
+.project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: var(--space-lg); }
+.project-grid__empty { color: var(--color-text-muted); margin-top: var(--space-lg); }
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  display: flex; flex-direction: column;
+}
+.card__image { aspect-ratio: 16 / 10; object-fit: cover; }
+.card__body { padding: var(--space-md); display: flex; flex-direction: column; gap: var(--space-sm); flex: 1; }
+.card__desc { color: var(--color-text-muted); font-size: 0.95rem; }
+
+.tech-tags { list-style: none; display: flex; flex-wrap: wrap; gap: var(--space-xs); margin: 0; padding: 0; }
+.tech-tag {
+  font-size: 0.75rem; font-family: var(--font-display);
+  background: var(--color-background); border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm); padding: 0.15rem 0.5rem; color: var(--color-secondary);
+}
+.card__links { margin-top: auto; display: flex; gap: var(--space-sm); padding-top: var(--space-sm); }
+
+/* =========================================================
+   9. DESIGN SYSTEM EDITOR
+   ========================================================= */
+.ds-editor { display: grid; grid-template-columns: 18rem 1fr; gap: var(--space-lg); margin-top: var(--space-lg); align-items: start; }
+.ds-editor__heading { margin-top: var(--space-lg); }
+.ds-editor__heading:first-child { margin-top: 0; }
+
+.ds-editor__controls {
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  position: sticky; top: 7rem;
+  display: flex; flex-direction: column; gap: var(--space-md);
+}
+
+.control { display: flex; flex-direction: column; gap: var(--space-xs); }
+.control label { font-size: 0.85rem; color: var(--color-text-muted); }
+.control input[type="color"] { width: 100%; height: 2.2rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); background: none; }
+.control input[type="range"] { width: 100%; }
+.control--theme { flex-direction: row; align-items: center; justify-content: space-between; }
+
+.swatch-list { list-style: none; display: flex; flex-wrap: wrap; gap: var(--space-md); padding: 0; margin: var(--space-sm) 0; }
+.swatch { display: flex; flex-direction: column; align-items: center; gap: var(--space-xs); font-size: 0.75rem; color: var(--color-text-muted); }
+.swatch__color { width: 3.5rem; height: 3.5rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border); }
+
+.type-scale { display: flex; flex-direction: column; gap: var(--space-xs); }
+.type-scale__sample--muted { color: var(--color-text-muted); }
+
+.space-scale { list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-xs); }
+.space-scale li { display: flex; align-items: center; gap: var(--space-sm); font-size: 0.8rem; color: var(--color-text-muted); }
+.space-scale__bar { height: 0.8rem; background: var(--color-primary); border-radius: 2px; display: inline-block; }
+
+.component-gallery { display: flex; flex-wrap: wrap; gap: var(--space-md); align-items: center; }
+.mini-input { display: flex; flex-direction: column; gap: var(--space-xs); min-width: 12rem; }
+.mini-input label { font-size: 0.8rem; color: var(--color-text-muted); }
+.mini-input input, .mini-input textarea {
+  background: var(--color-background); color: var(--color-text);
+  border: 1px solid var(--color-border); border-radius: var(--radius-sm);
+  padding: var(--space-xs) var(--space-sm); font-family: var(--font-body);
+}
+
+/* =========================================================
+   10. CONTACTO
+   ========================================================= */
+.contact__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); align-items: start; }
+
+.contact__email {
+  display: flex; align-items: center; gap: var(--space-sm); flex-wrap: wrap;
+  margin-top: var(--space-md);
+  font-family: var(--font-display);
+}
+
+.contact-form { display: flex; flex-direction: column; gap: var(--space-md); }
+.form-field { display: flex; flex-direction: column; gap: var(--space-xs); }
+.form-field label { font-size: 0.9rem; font-weight: 600; }
+.form-field input, .form-field textarea {
+  background: var(--color-surface); color: var(--color-text);
+  border: 1px solid var(--color-border); border-radius: var(--radius-sm);
+  padding: var(--space-sm); font-family: var(--font-body); font-size: 1rem;
+}
+.form-field input:invalid[data-touched="true"],
+.form-field textarea:invalid[data-touched="true"] { border-color: var(--color-danger); }
+
+.form-error { color: var(--color-danger); font-size: 0.8rem; min-height: 1.1em; }
+.form-success { color: var(--color-success); font-size: 0.9rem; }
+
+/* =========================================================
+   11. FOOTER
+   ========================================================= */
+.site-footer { border-top: 1px solid var(--color-border); padding-block: var(--space-lg); color: var(--color-text-muted); }
+.site-footer__grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--space-sm); }
+.site-footer__links { display: flex; gap: var(--space-md); }
+
+.back-to-top {
+  position: fixed; bottom: var(--space-lg); right: var(--space-lg);
+  width: 2.75rem; height: 2.75rem; border-radius: 50%;
+  background: var(--color-primary); color: #10121c;
+  border: none; font-size: 1.2rem; cursor: pointer;
+  box-shadow: var(--shadow-card);
+}
+
+/* =========================================================
+   12. RESPONSIVE
+   ========================================================= */
+@media (max-width: 900px) {
+  .hero__grid, .about__grid, .ds-editor, .contact__grid { grid-template-columns: 1fr; }
+  .hero__figure { order: -1; }
+  .ds-editor__controls { position: static; }
+}
+
+@media (max-width: 720px) {
+  .menu-toggle { display: flex; }
+
+  .tabs { display: none; width: 100%; }
+  .tabs.is-open { display: block; }
+  .tabs__list { flex-direction: column; padding: 0 var(--space-md) var(--space-sm); }
+  .tabs__item { border-bottom: 1px solid var(--color-border); width: 100%; }
+
+  .container { width: min(100% - 2 * var(--space-md), var(--content-width)); }
+  .section { padding-block: var(--space-lg); }
+}
