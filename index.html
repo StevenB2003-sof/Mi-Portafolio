@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Steven Barona — Portafolio de Desarrollo</title>
+  <meta name="description" content="Portafolio profesional de Steven Barona, estudiante de desarrollo de software.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER / NAV ESTILO "EDITOR" ===================== -->
+  <header class="editor-chrome">
+    <div class="editor-chrome__top">
+      <div class="editor-chrome__brand">
+        <span class="dot dot--red" aria-hidden="true"></span>
+        <span class="dot dot--yellow" aria-hidden="true"></span>
+        <span class="dot dot--green" aria-hidden="true"></span>
+        <span class="editor-chrome__filename">Steven Barona<span class="editor-chrome__ext"> - Mi Portfolio</span></span>
+      </div>
+
+      <div class="editor-chrome__actions">
+        <button class="icon-btn" id="themeToggleHeader" type="button" aria-pressed="false" aria-label="Cambiar a modo claro" title="Cambiar tema">
+          <span id="themeToggleHeaderIcon" aria-hidden="true">🌙</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Abrir menú de navegación">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="tabs" id="primaryNav" aria-label="Navegación principal">
+      <ul class="tabs__list">
+        <li><a class="tabs__item" href="#inicio" data-tab="inicio">inicio</a></li>
+        <li><a class="tabs__item" href="#sobre-mi" data-tab="sobre-mi">sobre mí</a></li>
+        <li><a class="tabs__item" href="#habilidades" data-tab="habilidades">skills</a></li>
+        <li><a class="tabs__item" href="#proyectos" data-tab="proyectos">proyectos</a></li>
+        <li><a class="tabs__item" href="#design-system" data-tab="design-system">theme</a></li>
+        <li><a class="tabs__item" href="#contacto" data-tab="contacto">contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===================== INICIO ===================== -->
+    <section id="inicio" class="section hero" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div class="hero__intro">
+          <p class="hero__eyebrow">bienvenido a mi portafolio</p>
+          <h1 id="hero-title" class="hero__title">
+            Hola, soy <span class="hero__name">Steven Barona</span>
+          </h1>
+          <p class="hero__role">
+            <span id="typedRole" class="hero__role-typed">Desarrollador Full-Stack</span><span class="hero__cursor" aria-hidden="true">|</span>
+          </p>
+          <p class="hero__lead">
+            Estudiante de Ingeniería de Software enfocado en construir productos web
+            claros, accesibles y mantenibles. Aprendo escribiendo código real, no solo leyendo sobre él.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#proyectos">Ver proyectos</a>
+            <a class="btn btn--secondary" href="#contacto">Hablemos</a>
+          </div>
+        </div>
+
+        <figure class="hero__figure">
+          <img src="img/Perfil.jpeg" alt="Fotografía de perfil de Steven Barona" width="360" height="360" class="hero__avatar">
+          <figcaption class="visually-hidden">Foto de perfil</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===================== SOBRE MÍ ===================== -->
+    <section id="sobre-mi" class="section" aria-labelledby="about-title">
+      <div class="container">
+        <h2 id="about-title" class="section__title">Sobre mí</h2>
+
+        <div class="about__grid">
+          <article class="about__bio">
+            <p>
+              Soy estudiante de Ingeniería de Software con interés en el desarrollo web 
+              y en comprender cómo las decisiones de arquitectura influyen en la calidad 
+              y el mantenimiento de un proyecto a largo plazo. 
+              Me gusta trabajar tanto en la creación de interfaces como en comprender el funcionamiento 
+              y la lógica detrás de las aplicaciones.
+            </p>
+            <p>
+              Actualmente estoy fortaleciendo mis conocimientos en desarrollo backend y bases de datos, 
+              mientras continúo mejorando mis habilidades en frontend mediante proyectos personales, 
+              como el desarrollo de este portafolio.
+            </p>
+          </article>
+
+          <aside class="about__facts" aria-label="Datos rápidos">
+            <ul class="fact-list">
+              <li class="fact-list__item">
+                <span class="fact-list__label">Formación</span>
+                <span class="fact-list__value">Ingeniería de Software (en curso)</span>
+              </li>
+              <li class="fact-list__item">
+                <span class="fact-list__label">Área de interés</span>
+                <span class="fact-list__value">Desarrollo Full-Stack</span>
+              </li>
+              <li class="fact-list__item">
+                <span class="fact-list__label">Ubicación</span>
+                <span class="fact-list__value">Duran, Ecuador</span>
+              </li>
+              <li class="fact-list__item">
+                <span class="fact-list__label">Disponibilidad</span>
+                <span class="fact-list__value">Prácticas / proyectos freelance</span>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== HABILIDADES ===================== -->
+    <section id="habilidades" class="section section--surface" aria-labelledby="skills-title">
+      <div class="container">
+        <p class="section__eyebrow">skills.json</p>
+        <h2 id="skills-title" class="section__title">Habilidades</h2>
+        <p class="section__lead">
+          Organizadas por categoría. El nivel indicado refleja con qué soltura puedo defender
+          decisiones técnicas sobre cada tecnología, no un certificado.
+        </p>
+
+        <div class="skills">
+          <article class="skill-category">
+            <h3 class="skill-category__title">Frontend</h3>
+            <ul class="skill-list">
+              <li class="skill-badge" data-level="Avanzado">
+                <span class="skill-badge__name">HTML5 &amp; CSS3</span>
+                <span class="skill-badge__level">Avanzado</span>
+              </li>
+              <li class="skill-badge" data-level="Intermedio">
+                <span class="skill-badge__name">JavaScript (ES6+)</span>
+                <span class="skill-badge__level">Intermedio</span>
+              </li>
+              <li class="skill-badge" data-level="Básico">
+                <span class="skill-badge__name">React</span>
+                <span class="skill-badge__level">Básico</span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="skill-category">
+            <h3 class="skill-category__title">Backend</h3>
+            <ul class="skill-list">
+              <li class="skill-badge" data-level="Intermedio">
+                <span class="skill-badge__name">Node.js</span>
+                <span class="skill-badge__level">Intermedio</span>
+              </li>
+              <li class="skill-badge" data-level="Básico">
+                <span class="skill-badge__name">Python / Flask</span>
+                <span class="skill-badge__level">Básico</span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="skill-category">
+            <h3 class="skill-category__title">Bases de datos</h3>
+            <ul class="skill-list">
+              <li class="skill-badge" data-level="Intermedio">
+                <span class="skill-badge__name">PostgreSQL</span>
+                <span class="skill-badge__level">Intermedio</span>
+              </li>
+              <li class="skill-badge" data-level="Básico">
+                <span class="skill-badge__name">MongoDB</span>
+                <span class="skill-badge__level">Básico</span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="skill-category">
+            <h3 class="skill-category__title">Herramientas</h3>
+            <ul class="skill-list">
+              <li class="skill-badge" data-level="Avanzado">
+                <span class="skill-badge__name">Git &amp; GitHub</span>
+                <span class="skill-badge__level">Avanzado</span>
+              </li>
+              <li class="skill-badge" data-level="Básico">
+                <span class="skill-badge__name">Docker</span>
+                <span class="skill-badge__level">Básico</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROYECTOS ===================== -->
+    <section id="proyectos" class="section" aria-labelledby="projects-title">
+      <div class="container">
+        <p class="section__eyebrow">proyectos.js</p>
+        <h2 id="projects-title" class="section__title">Proyectos destacados</h2>
+
+        <div class="filter-bar" role="group" aria-label="Filtrar proyectos por tecnología">
+          <button class="filter-chip is-active" data-filter="todos">Todos</button>
+          <button class="filter-chip" data-filter="javascript">JavaScript</button>
+          <button class="filter-chip" data-filter="react">React</button>
+          <button class="filter-chip" data-filter="python">Python</button>
+          <button class="filter-chip" data-filter="node">Node.js</button>
+        </div>
+
+        <div class="project-grid" id="projectGrid">
+
+          <article class="card project-card" data-tech="javascript html css">
+            <img class="card__image" src="https://via.placeholder.com/480x300.png?text=Proyecto+1" alt="Captura de pantalla del proyecto Lista de Tareas">
+            <div class="card__body">
+              <h3 class="card__title">Lista de Tareas Interactiva</h3>
+              <p class="card__desc">
+                Aplicación para organizar tareas diarias con persistencia local. Resuelve la
+                necesidad de un gestor simple sin depender de una cuenta ni servidor.
+              </p>
+              <ul class="tech-tags">
+                <li class="tech-tag">HTML</li>
+                <li class="tech-tag">CSS</li>
+                <li class="tech-tag">JavaScript</li>
+              </ul>
+              <div class="card__links">
+                <a class="btn btn--ghost" href="https://github.com/tu-usuario/tu-repo" target="_blank" rel="noopener">Repositorio</a>
+                <a class="btn btn--ghost" href="#" target="_blank" rel="noopener">Demo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card project-card" data-tech="react node javascript">
+            <img class="card__image" src="https://via.placeholder.com/480x300.png?text=Proyecto+2" alt="Captura de pantalla del proyecto Marketplace">
+            <div class="card__body">
+              <h3 class="card__title">Marketplace Estudiantil</h3>
+              <p class="card__desc">
+                Plataforma para que estudiantes compren y vendan material académico usado.
+                Resuelve el problema de encontrar libros y equipos a bajo costo dentro del campus.
+              </p>
+              <ul class="tech-tags">
+                <li class="tech-tag">React</li>
+                <li class="tech-tag">Node.js</li>
+                <li class="tech-tag">MongoDB</li>
+              </ul>
+              <div class="card__links">
+                <a class="btn btn--ghost" href="https://github.com/tu-usuario/tu-repo" target="_blank" rel="noopener">Repositorio</a>
+                <a class="btn btn--ghost" href="#" target="_blank" rel="noopener">Demo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card project-card" data-tech="python">
+            <img class="card__image" src="https://via.placeholder.com/480x300.png?text=Proyecto+3" alt="Captura de pantalla del proyecto API de Clima">
+            <div class="card__body">
+              <h3 class="card__title">API de Pronóstico Climático</h3>
+              <p class="card__desc">
+                Servicio backend que agrega datos de clima de distintas fuentes y expone un
+                endpoint único. Resuelve la inconsistencia de formatos entre proveedores.
+              </p>
+              <ul class="tech-tags">
+                <li class="tech-tag">Python</li>
+                <li class="tech-tag">Flask</li>
+                <li class="tech-tag">PostgreSQL</li>
+              </ul>
+              <div class="card__links">
+                <a class="btn btn--ghost" href="https://github.com/tu-usuario/tu-repo" target="_blank" rel="noopener">Repositorio</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="project-grid__empty" id="projectGridEmpty" hidden>
+          No hay proyectos con esa tecnología todavía.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== DESIGN SYSTEM ===================== -->
+    <section id="design-system" class="section section--surface" aria-labelledby="ds-title">
+      <div class="container">
+        <p class="section__eyebrow">theme.config</p>
+        <h2 id="ds-title" class="section__title">Design System / Componentes</h2>
+        <p class="section__lead">
+          Este panel controla las mismas variables CSS que usa todo el sitio. Mueve los controles
+          y observa cómo cambian el resto de las secciones: no es una imagen estática del sistema, es el sistema.
+        </p>
+
+        <div class="ds-editor">
+          <div class="ds-editor__controls">
+            <h3 class="ds-editor__heading">Editor de tema en vivo</h3>
+
+            <div class="control">
+              <label for="ctrlPrimary">Color primario</label>
+              <input type="color" id="ctrlPrimary" value="#89b4fa">
+            </div>
+            <div class="control">
+              <label for="ctrlSecondary">Color secundario</label>
+              <input type="color" id="ctrlSecondary" value="#cba6f7">
+            </div>
+            <div class="control">
+              <label for="ctrlRadius">Radio de bordes (<span id="ctrlRadiusValue">1</span>rem)</label>
+              <input type="range" id="ctrlRadius" min="0" max="2" step="0.1" value="1">
+            </div>
+            <div class="control">
+              <label for="ctrlSpace">Densidad de espaciado (<span id="ctrlSpaceValue">1</span>x)</label>
+              <input type="range" id="ctrlSpace" min="0.75" max="1.5" step="0.05" value="1">
+            </div>
+
+            <div class="control control--theme">
+              <span>Modo</span>
+              <button id="themeToggle" class="btn btn--secondary" type="button" aria-pressed="false">
+                Cambiar a modo claro
+              </button>
+            </div>
+
+            <button id="resetTheme" class="btn btn--ghost" type="button">Restaurar valores por defecto</button>
+          </div>
+
+          <div class="ds-editor__preview">
+            <h3 class="ds-editor__heading">Colores</h3>
+            <ul class="swatch-list">
+              <li class="swatch"><span class="swatch__color" style="background: var(--color-primary)"></span><code>--color-primary</code></li>
+              <li class="swatch"><span class="swatch__color" style="background: var(--color-secondary)"></span><code>--color-secondary</code></li>
+              <li class="swatch"><span class="swatch__color" style="background: var(--color-background)"></span><code>--color-background</code></li>
+              <li class="swatch"><span class="swatch__color" style="background: var(--color-surface)"></span><code>--color-surface</code></li>
+              <li class="swatch"><span class="swatch__color" style="background: var(--color-text)"></span><code>--color-text</code></li>
+              <li class="swatch"><span class="swatch__color" style="background: var(--color-text-muted)"></span><code>--color-text-muted</code></li>
+            </ul>
+
+            <h3 class="ds-editor__heading">Tipografía</h3>
+            <div class="type-scale">
+              <h1 class="type-scale__sample">Encabezado h1</h1>
+              <h2 class="type-scale__sample">Encabezado h2</h2>
+              <h3 class="type-scale__sample">Encabezado h3</h3>
+              <p class="type-scale__sample">Párrafo de texto regular usado para contenido principal del sitio.</p>
+              <p class="type-scale__sample type-scale__sample--muted">Texto secundario / muted, usado para aclaraciones.</p>
+              <a class="type-scale__sample" href="#design-system">Enlace de ejemplo</a>
+            </div>
+
+            <h3 class="ds-editor__heading">Espaciado</h3>
+            <ul class="space-scale">
+              <li><span class="space-scale__bar" style="width: var(--space-sm)"></span><code>--space-sm</code></li>
+              <li><span class="space-scale__bar" style="width: var(--space-md)"></span><code>--space-md</code></li>
+              <li><span class="space-scale__bar" style="width: var(--space-lg)"></span><code>--space-lg</code></li>
+            </ul>
+
+            <h3 class="ds-editor__heading">Componentes</h3>
+            <div class="component-gallery">
+              <button class="btn btn--primary" type="button">Botón primario</button>
+              <button class="btn btn--secondary" type="button">Botón secundario</button>
+              <span class="skill-badge" data-level="Intermedio">
+                <span class="skill-badge__name">Badge</span>
+                <span class="skill-badge__level">Intermedio</span>
+              </span>
+              <div class="mini-input">
+                <label for="dsInputSample">Input</label>
+                <input type="text" id="dsInputSample" placeholder="Texto de ejemplo">
+              </div>
+              <div class="mini-input">
+                <label for="dsTextareaSample">Textarea</label>
+                <textarea id="dsTextareaSample" rows="2" placeholder="Mensaje de ejemplo"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <section id="contacto" class="section" aria-labelledby="contact-title">
+      <div class="container contact__grid">
+        <div>
+          <p class="section__eyebrow">contacto</p>
+          <h2 id="contact-title" class="section__title">Contacto</h2>
+          <p class="section__lead">
+            ¿Tienes un proyecto, una vacante o simplemente quieres conversar sobre tecnología?
+            Escríbeme por el formulario o directamente a mi correo.
+          </p>
+
+          <div class="contact__email">
+            <span id="emailText">sbaronaa@unemi.edu.ec</span>
+            <button id="copyEmailBtn" class="btn btn--ghost" type="button">Copiar correo</button>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-field">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" required minlength="2" autocomplete="name">
+            <span class="form-error" id="nameError" role="alert"></span>
+          </div>
+
+          <div class="form-field">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+            <span class="form-error" id="emailError" role="alert"></span>
+          </div>
+
+          <div class="form-field">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" rows="5" required minlength="10"></textarea>
+            <span class="form-error" id="messageError" role="alert"></span>
+          </div>
+
+          <button class="btn btn--primary" type="submit">Enviar mensaje</button>
+          <p class="form-success" id="formSuccess" role="status" hidden>
+            ¡Gracias! Tu mensaje fue validado correctamente. (Conecta este formulario a un servicio como Formspree o EmailJS para enviarlo de verdad.)
+          </p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <p>&copy; <span id="year"></span> Steven Barona. Construido con HTML, CSS y JavaScript.</p>
+      <div class="site-footer__links">
+        <a href="https://github.com/tu-usuario" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/tu-usuario" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="back-to-top" type="button" aria-label="Volver al inicio" hidden>↑</button>
+
+  <script src="main.js"></script>
+</body>
+</html>
