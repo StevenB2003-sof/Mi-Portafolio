@@ -69,3 +69,7 @@ npx serve .
 ## Capturas
 
 _Agrega aquí 2–3 capturas de pantalla del resultado final (escritorio y móvil)._
+
+![Vista Previa Mobile](img/iphone16promax.png) 
+
+![Vista Previa Escritorio](img/VistaEscritorio.png) 
