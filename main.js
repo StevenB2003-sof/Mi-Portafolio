@@ -1,18 +1,13 @@
-// =========================================================
-// UTILIDADES
-// =========================================================
 const root = document.documentElement;
 const $ = (sel, ctx = document) => ctx.querySelector(sel);
 const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
 
-// =========================================================
-// 1. AÑO DINÁMICO EN EL FOOTER
-// =========================================================
+
+
 $('#year').textContent = new Date().getFullYear();
 
-// =========================================================
-// 2. MENÚ RESPONSIVE (hamburguesa)
-// =========================================================
+
+
 const menuToggle = $('#menuToggle');
 const primaryNav = $('#primaryNav');
 
@@ -21,7 +16,8 @@ menuToggle.addEventListener('click', () => {
   menuToggle.setAttribute('aria-expanded', String(isOpen));
 });
 
-// Cierra el menú al elegir una pestaña (en móvil) y marca la pestaña activa
+
+
 const tabLinks = $$('.tabs__item');
 tabLinks.forEach(link => {
   link.addEventListener('click', () => {
@@ -44,9 +40,8 @@ const setActiveTab = () => {
 window.addEventListener('scroll', setActiveTab, { passive: true });
 setActiveTab();
 
-// =========================================================
-// 3. TEXTO "TYPED" DEL ROL EN EL HERO
-// =========================================================
+
+
 const roles = ['Desarrollador Full-Stack', 'Estudiante de Software', 'Backend Enthusiast', 'Resuelve-problemas'];
 const typedEl = $('#typedRole');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -69,9 +64,7 @@ if (typedEl && !prefersReducedMotion) {
   tick();
 }
 
-// =========================================================
-// 4. DESIGN SYSTEM: EDITOR DE TEMA EN VIVO + PERSISTENCIA
-// =========================================================
+
 const THEME_KEY = 'portfolio-theme-tokens';
 
 const defaults = {
@@ -113,8 +106,8 @@ const ctrlRadius = $('#ctrlRadius');
 const ctrlSpace = $('#ctrlSpace');
 const ctrlRadiusValue = $('#ctrlRadiusValue');
 const ctrlSpaceValue = $('#ctrlSpaceValue');
-const themeToggle = $('#themeToggle');           // botón dentro de la sección Design System
-const themeToggleHeader = $('#themeToggleHeader'); // botón siempre visible en la cabecera
+const themeToggle = $('#themeToggle');           
+const themeToggleHeader = $('#themeToggleHeader'); 
 const themeToggleHeaderIcon = $('#themeToggleHeaderIcon');
 const resetTheme = $('#resetTheme');
 
@@ -128,11 +121,13 @@ function syncControls() {
 
   const isLight = tokens.mode === 'light';
 
-  // Botón de la sección Design System
+
+  
   themeToggle.textContent = isLight ? 'Cambiar a modo oscuro' : 'Cambiar a modo claro';
   themeToggle.setAttribute('aria-pressed', String(isLight));
 
-  // Botón siempre visible en la cabecera
+
+  
   themeToggleHeaderIcon.textContent = isLight ? '☀️' : '🌙';
   themeToggleHeader.setAttribute('aria-pressed', String(isLight));
   themeToggleHeader.setAttribute('aria-label', isLight ? 'Cambiar a modo oscuro' : 'Cambiar a modo claro');
@@ -163,9 +158,8 @@ resetTheme.addEventListener('click', () => {
   applyTokens(tokens); saveTokens(tokens); syncControls();
 });
 
-// =========================================================
-// 5. FILTRO DE PROYECTOS POR TECNOLOGÍA
-// =========================================================
+
+
 const filterChips = $$('.filter-chip');
 const projectCards = $$('.project-card');
 const emptyMessage = $('#projectGridEmpty');
@@ -189,9 +183,8 @@ filterChips.forEach(chip => {
   });
 });
 
-// =========================================================
-// 6. VALIDACIÓN DEL FORMULARIO DE CONTACTO
-// =========================================================
+
+
 const contactForm = $('#contactForm');
 const formSuccess = $('#formSuccess');
 
@@ -227,9 +220,8 @@ contactForm.addEventListener('submit', e => {
   }
 });
 
-// =========================================================
-// 7. COPIAR CORREO AL PORTAPAPELES
-// =========================================================
+
+
 const copyEmailBtn = $('#copyEmailBtn');
 const emailText = $('#emailText');
 
@@ -244,9 +236,8 @@ copyEmailBtn.addEventListener('click', async () => {
   }
 });
 
-// =========================================================
-// 8. BOTÓN "VOLVER AL INICIO"
-// =========================================================
+
+
 const backToTop = $('#backToTop');
 
 window.addEventListener('scroll', () => {

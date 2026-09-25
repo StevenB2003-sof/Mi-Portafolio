@@ -1,10 +1,4 @@
-/* =========================================================
-   VARIABLES.CSS — Custom Properties (tokens del sistema visual)
-   Este archivo SIEMPRE debe cargarse antes que style.css
-   ========================================================= */
-
 :root {
-  /* Color — modo oscuro (por defecto) */
   --color-primary: #89b4fa;
   --color-secondary: #cba6f7;
   --color-background: #1e1e2e;
@@ -15,11 +9,13 @@
   --color-success: #a6e3a1;
   --color-danger: #f38ba8;
 
-  /* Tipografía */
+
+  
   --font-display: 'JetBrains Mono', 'Courier New', monospace;
   --font-body: 'Inter', system-ui, sans-serif;
 
-  /* Espaciado (multiplicado por --space-scale desde main.js) */
+
+  
   --space-scale: 1;
   --space-xs: calc(0.25rem * var(--space-scale));
   --space-sm: calc(0.5rem * var(--space-scale));
@@ -27,17 +23,19 @@
   --space-lg: calc(2rem * var(--space-scale));
   --space-xl: calc(4rem * var(--space-scale));
 
-  /* Bordes y sombras */
+
+  
   --radius-sm: 0.35rem;
   --radius-md: 1rem;
   --shadow-card: 0 4px 16px rgb(0 0 0 / 0.35);
 
-  /* Layout */
+
+
   --content-width: 72rem;
 }
 
-/* Override para modo claro (activado con [data-theme="light"] en <html>,
-   controlado desde main.js y persistido en localStorage) */
+
+
 [data-theme="light"] {
   --color-primary: #2563eb;
   --color-secondary: #7c3aed;

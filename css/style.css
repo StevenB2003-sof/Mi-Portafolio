@@ -1,11 +1,3 @@
-/* =========================================================
-   STYLE.CSS — Requiere que variables.css esté cargado antes
-   en index.html (<link href="css/variables.css"> primero)
-   ========================================================= */
-
-/* =========================================================
-   1. CORRECCIÓN Y PREVENCIÓN DE OVERFLOW
-   ========================================================= */
 html, body {
   max-width: 100vw;
   overflow-x: hidden;
@@ -16,9 +8,8 @@ p, h1, h2, h3, h4, h5, h6, a, span, button {
   word-break: break-word;
 }
 
-/* =========================================================
-   2. RESET Y BASE
-   ========================================================= */
+
+
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 6.5rem; }
 
@@ -67,9 +58,8 @@ p { margin: 0 0 var(--space-md); max-width: 65ch; }
 }
 .section__lead { color: var(--color-text-muted); max-width: 60ch; }
 
-/* =========================================================
-   3. HEADER / "EDITOR CHROME" NAV
-   ========================================================= */
+
+
 .editor-chrome {
   position: sticky; top: 0; z-index: 50;
   background: var(--color-surface);
@@ -137,9 +127,8 @@ p { margin: 0 0 var(--space-md); max-width: 65ch; }
   background: var(--color-background);
 }
 
-/* =========================================================
-   4. HERO
-   ========================================================= */
+
+
 .hero { padding-top: var(--space-xl); }
 .hero__grid {
   display: grid; grid-template-columns: 1.3fr 1fr; gap: var(--space-lg);
@@ -171,9 +160,8 @@ p { margin: 0 0 var(--space-md); max-width: 65ch; }
   .hero__cursor { animation: none; }
 }
 
-/* =========================================================
-   5. BOTONES
-   ========================================================= */
+
+
 .btn {
   font-family: var(--font-body);
   font-weight: 600;
@@ -191,9 +179,9 @@ p { margin: 0 0 var(--space-md); max-width: 65ch; }
 .btn--secondary { background: transparent; color: var(--color-text); border-color: var(--color-border); }
 .btn--ghost { background: transparent; color: var(--color-primary); border-color: var(--color-primary); }
 
-/* =========================================================
-   6. SOBRE MÍ
-   ========================================================= */
+
+
+
 .about__grid { display: grid; grid-template-columns: 2fr 1fr; gap: var(--space-lg); align-items: start; }
 
 .fact-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-sm); }
@@ -207,9 +195,9 @@ p { margin: 0 0 var(--space-md); max-width: 65ch; }
 .fact-list__label { font-size: 0.8rem; color: var(--color-text-muted); }
 .fact-list__value { font-weight: 600; }
 
-/* =========================================================
-   7. SKILLS
-   ========================================================= */
+
+
+
 .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: var(--space-lg); margin-top: var(--space-lg); }
 .skill-category__title { border-bottom: 1px solid var(--color-border); padding-bottom: var(--space-xs); }
 .skill-list { list-style: none; margin: var(--space-sm) 0 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-sm); }
@@ -223,9 +211,9 @@ p { margin: 0 0 var(--space-md); max-width: 65ch; }
 }
 .skill-badge__level { font-size: 0.75rem; color: var(--color-primary); font-family: var(--font-display); }
 
-/* =========================================================
-   8. PROYECTOS
-   ========================================================= */
+
+
+
 .filter-bar { display: flex; gap: var(--space-sm); flex-wrap: wrap; margin: var(--space-md) 0 var(--space-lg); }
 .filter-chip {
   font-family: var(--font-display); font-size: 0.8rem;
@@ -253,9 +241,9 @@ p { margin: 0 0 var(--space-md); max-width: 65ch; }
 }
 .card__links { margin-top: auto; display: flex; gap: var(--space-sm); padding-top: var(--space-sm); }
 
-/* =========================================================
-   9. DESIGN SYSTEM EDITOR
-   ========================================================= */
+
+
+
 .ds-editor { display: grid; grid-template-columns: 18rem 1fr; gap: var(--space-lg); margin-top: var(--space-lg); align-items: start; }
 .ds-editor__heading { margin-top: var(--space-lg); }
 .ds-editor__heading:first-child { margin-top: 0; }
@@ -296,9 +284,9 @@ p { margin: 0 0 var(--space-md); max-width: 65ch; }
   max-width: 100%;
 }
 
-/* =========================================================
-   10. CONTACTO
-   ========================================================= */
+
+
+
 .contact__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); align-items: start; }
 
 .contact__email {
@@ -322,9 +310,9 @@ p { margin: 0 0 var(--space-md); max-width: 65ch; }
 .form-error { color: var(--color-danger); font-size: 0.8rem; min-height: 1.1em; }
 .form-success { color: var(--color-success); font-size: 0.9rem; }
 
-/* =========================================================
-   11. FOOTER
-   ========================================================= */
+
+
+
 .site-footer { border-top: 1px solid var(--color-border); padding-block: var(--space-lg); color: var(--color-text-muted); }
 .site-footer__grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--space-sm); }
 .site-footer__links { display: flex; gap: var(--space-md); }
@@ -337,9 +325,9 @@ p { margin: 0 0 var(--space-md); max-width: 65ch; }
   box-shadow: var(--shadow-card);
 }
 
-/* =========================================================
-   12. RESPONSIVE
-   ========================================================= */
+
+
+
 @media (max-width: 900px) {
   .hero__grid, .about__grid, .ds-editor, .contact__grid { grid-template-columns: 1fr; }
   .hero__figure { order: -1; }
