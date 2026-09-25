@@ -3,8 +3,8 @@
 Portafolio profesional de una sola página, construido con HTML5 semántico, CSS propio
 (basado en variables/custom properties) y JavaScript sin frameworks ni librerías.
 
-**Sitio publicado:** https://tu-usuario.github.io/tu-repositorio/
-**Repositorio:** https://github.com/tu-usuario/tu-repositorio
+**Sitio publicado:** https://github.com/StevenB2003-sof
+**Repositorio:** https://github.com/StevenB2003-sof/Mi-Portafolio.git
 
 ## Concepto de diseño
 
@@ -41,6 +41,7 @@ mi portafolio/
 │   ├── variables.css   (Custom Properties — debe cargarse primero)
 │   └── style.css       (resto de los estilos, consume las variables)
 ├── index.html
+├── img
 ├── main.js
 └── Readme.MD
 ```
@@ -53,18 +54,6 @@ o servirlo con cualquier servidor estático, por ejemplo:
 ```bash
 npx serve .
 ```
-
-## Cómo personalizarlo
-
-1. Reemplaza los textos marcados como `Tu Nombre`, `tu.correo@ejemplo.com`,
-   `tu-usuario`/`tu-repo` en `index.html` por tu información real.
-2. Sustituye las imágenes de `https://via.placeholder.com/...` por tu foto y capturas
-   reales de tus proyectos (colócalas, por ejemplo, en una carpeta `assets/img/`).
-3. Ajusta las secciones de Habilidades y Proyectos con tu propia información,
-   manteniendo los atributos `data-tech` en las tarjetas de proyecto para que el
-   filtro siga funcionando.
-4. Conecta el formulario de contacto a un servicio real (Formspree, EmailJS, o un
-   backend propio) si deseas que envíe correos de verdad.
 
 ## Publicación en GitHub Pages
 
